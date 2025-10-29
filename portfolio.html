@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-IV Renewable Energy Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles and Reset */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        #container {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column; /* Default stack on mobile */
+        }
+        /* Sidebar/Navigation Panel */
+        #sidebar {
+            width: 100%; /* Full width on mobile */
+            background-color: #007bff; /* Primary Blue */
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #sidebar h2 {
+            text-align: center;
+            border-bottom: 2px solid #ffffff30;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        #sidebar p.user-info {
+            text-align: center;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* For horizontal layout on mobile */
+            justify-content: center;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        #sidebar ul li {
+            margin: 5px 10px;
+        }
+        #sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+        #sidebar ul li a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        #sidebar ul li a.active {
+            background-color: #ffffff;
+            color: #007bff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Content Area */
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        /* Typography */
+        h1 {
+            color: #007bff;
+            border-bottom: 3px solid #007bff30;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        h3 {
+            color: #333;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        h4 {
+            color: #555;
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+        .explanation p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* Block Diagram Styling */
+        .block-diagram {
+            border: 2px solid #007bff;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #eaf5ff;
+            overflow-x: auto;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #0056b3;
+            text-align: center;
+        }
+        .block-diagram span {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* Section Visibility */
+        .activity-section {
+            display: none; /* Hide all sections by default */
+        }
+        .activity-section.active {
+            display: block; /* Show active section */
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            #container {
+                flex-direction: row; /* Sidebar on left for desktop */
+            }
+            #sidebar {
+                width: 250px;
+                flex-shrink: 0;
+                padding: 40px 0;
+                min-height: 100vh;
+            }
+            #sidebar ul {
+                flex-direction: column; /* Vertical links on desktop */
+                justify-content: flex-start;
+                padding: 0 20px;
+            }
+            #sidebar ul li {
+                margin: 0 0 10px 0;
+            }
+            #content {
+                margin: 40px;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="sidebar">
+        <h2>FT-IV Energy Portfolio</h2>
+        <p class="user-info">Pratikshit Das / RA2311047010112</p>
+        <!-- NAVIGATION PANEL -->
+        <ul>
+            <li><a href="#welcome" id="nav-welcome" class="active" onclick="showActivity('welcome', this)">Home</a></li>
+            <li><a href="#activity1" id="nav-activity1" onclick="showActivity('activity1', this)">Activity 1 (Wave/Tidal)</a></li>
+            <li><a href="#activity2" id="nav-activity2" onclick="showActivity('activity2', this)">Activity 2 (Biomass)</a></li>
+            <li><a href="#activity3" id="nav-activity3" onclick="showActivity('activity3', this)">Activity 3 (Geothermal/OTEC)</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+
+        <!-- 1. WELCOME SECTION -->
+        <section id="welcome" class="activity-section active">
+            <h1>Academic Portfolio Submission</h1>
+            <h3>Design and Application of Renewable Energy Systems</h3>
+            <p class="explanation">Welcome to the portfolio submission for FT-IV. This project addresses three design and application-oriented activities focused on non-solar renewable energy sources, as required by the submission guidelines. All sections contain the required **Block Diagram/Architecture** and an **Explanation** of 150–200 words.</p>
+            <hr style="margin: 30px 0;">
+            <p><strong>Evaluation Reminders:</strong></p>
+            <ul>
+                <li><strong>Website Design & Navigation:</strong> Implemented via the left navigation panel.</li>
+                <li><strong>Content:</strong> All three required activities are completed.</li>
+                <li><strong>Submission:</strong> The final published URL must be shared by the deadline.</li>
+            </ul>
+        </section>
+
+        <!-- 2. ACTIVITY 1 (WAVE) -->
+        <section id="activity1" class="activity-section">
+            <h1>Activity 1: Wave Energy for Desalination</h1>
+            <h3>Question: Draw the block diagram of a wave energy conversion system that can be integrated into a coastal desalination plant. (Activity 1 - Tidal/Wave/Wind)</h3>
+
+            <h4>Block Diagram/Architecture (Oscillating Water Column $\rightarrow$ RO Desalination)</h4>
+            <div class="block-diagram">
+                <span>WAVE POWER INPUT</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>WEC CONVERTER (OWC Chamber)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>AIR TURBINE</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>GENERATOR</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>ELECTRICAL POWER OUTPUT</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>HIGH-PRESSURE PUMP (Desalination)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>RO MEMBRANE</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>FRESHWATER OUTPUT</span>
+            </div>
+
+            <h4>Explanation (195 Words)</h4>
+            <div class="explanation">
+                <p>This activity proposes integrating a **Wave Energy Conversion (WEC)** system with a **Reverse Osmosis (RO)** desalination plant. The **source of energy** is the kinetic and potential energy inherent in ocean waves. The most common **conversion process** for this integration is often an **Oscillating Water Column (OWC)** device, where incoming waves compress air within a chamber. This pressurized air drives a **Wells Turbine** (or similar), converting the wave's kinetic energy into **mechanical energy**, which a generator then transforms into **electrical power**.</p>
+                <p>The **output/utilization** of this system is two-fold: **electricity** and **potable freshwater**. The generated electricity powers the high-pressure pumps essential for the RO desalination process, which forces seawater through semi-permeable membranes to remove salt. This system's **real-world application relevance** is significant for coastal regions facing water scarcity. By using a non-intermittent, non-polluting wave resource to power an energy-intensive desalination process, it provides a completely self-sufficient, sustainable solution for clean water access, reducing reliance on the main electrical grid and fossil fuels.</p>
+            </div>
+        </section>
+
+        <!-- 3. ACTIVITY 2 (BIOMASS) -->
+        <section id="activity2" class="activity-section">
+            <h1>Activity 2: Biogas Generation for a Dairy Farm</h1>
+            <h3>Question: Design a biomass-based biogas generation system for a dairy farm handling 100 cattle. (Activity 2 - Biomass)</h3>
+
+            <h4>Block Diagram/Architecture (Anaerobic Digestion System)</h4>
+            <div class="block-diagram">
+                <span>CATTLE MANURE/SLURRY (Feedstock)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>PREPROCESSING/MIXING TANK</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>ANAEROBIC DIGESTER ($\text{CH}_4 + \text{CO}_2$ Generation)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>BIOGAS STORAGE</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>BIOGAS UTILIZATION (Heating/Electricity)</span>
+                <br>
+                <span>&nbsp;</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>DIGESTATE OUTPUT (Slurry)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>FERTILIZER UTILIZATION</span>
+            </div>
+
+            <h4>Explanation (190 Words)</h4>
+            <div class="explanation">
+                <p>The objective is to design a sustainable biogas generation system for a dairy farm. The primary **source of energy** is the **biomass** in the form of **cattle manure** and wastewater slurry from the 100 cattle. The **conversion process** is **Anaerobic Digestion (AD)**, which occurs in a large, airtight digester tank. Microorganisms break down the organic material in the absence of oxygen, resulting in the production of **biogas** (primarily methane ($\text{CH}_4$) and carbon dioxide ($\text{CO}_2$)) and a nutrient-rich residue called **digestate**.</p>
+                <p>The main **output/utilization** of the system is the **biogas**, which is stored and typically used on the farm for thermal applications like cooking, heating water for cleaning, or fueling a generator for electricity. The secondary, but equally valuable, output is the **digestate**, a superior, odor-free **organic fertilizer** that can replace chemical fertilizers on the farm’s fodder fields. The **real-world application relevance** for dairy farms is transformative. It simultaneously manages massive volumes of farm waste hygienically, reduces greenhouse gas emissions (by capturing methane), provides a renewable energy source, and creates a valuable fertilizer byproduct, significantly boosting the farm's environmental and economic sustainability.</p>
+            </div>
+        </section>
+
+        <!-- 4. ACTIVITY 3 (OTEC) -->
+        <section id="activity3" class="activity-section">
+            <h1>Activity 3: Ocean Thermal Energy Conversion (OTEC)</h1>
+            <h3>Question: Develop the block diagram of an Ocean Thermal Energy Conversion (OTEC) system for electricity production and freshwater generation. (Activity 3 - Geothermal/OTEC)</h3>
+
+            <h4>Block Diagram/Architecture (Closed-Cycle OTEC System)</h4>
+            <div class="block-diagram">
+                <span>WARM SURFACE WATER ($\approx 25^\circ \text{C}$)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>EVAPORATOR (Vaporizes Working Fluid)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>TURBINE</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>GENERATOR (Electricity)</span>
+                <br>
+                <span>&nbsp;</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>CONDENSER (Cooled by Deep Water)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>COLD DEEP WATER ($\approx 5^\circ \text{C}$)</span> &nbsp; $\rightarrow$ &nbsp; 
+                <span>DISCHARGE</span>
+            </div>
+
+            <h4>Explanation (199 Words)</h4>
+            <div class="explanation">
+                <p>This activity details a **Closed-Cycle Ocean Thermal Energy Conversion (OTEC)** system, which utilizes the temperature difference between warm surface seawater and cold deep seawater. The **source of energy** is the enormous stored thermal energy in the ocean, a result of solar heating. The most common and efficient **conversion process** is the **Closed-Cycle OTEC**, which uses a low-boiling-point working fluid, such as ammonia. Warm surface water heats this fluid in an **evaporator** to create high-pressure vapor. This vapor drives a **turbine** connected to a **generator** to produce electricity. The vapor is then cooled back into a liquid in a **condenser** using cold water pumped from the ocean depths, completing the closed cycle.</p>
+                <p>The primary **output/utilization** is continuous, reliable **baseload electricity generation**. A secondary benefit, often integrated with **Open-Cycle OTEC**, is the production of **freshwater** from the condensed steam, which is a key value proposition. OTEC’s **real-world application relevance** lies in its potential to provide a non-intermittent, clean energy source for tropical island nations and coastal developing regions. As the temperature gradient is consistently available $24/7$, OTEC avoids the intermittency issues of solar and wind, offering a stable power supply and potentially alleviating clean water shortages simultaneously.</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script>
+    /* JavaScript to handle smooth navigation and display the correct section */
+    function showActivity(activityId, element) {
+        // Hide all sections
+        document.querySelectorAll('.activity-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show the selected section
+        const targetSection = document.getElementById(activityId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Update active class on sidebar links
+        document.querySelectorAll('#sidebar ul li a').forEach(link => {
+            link.classList.remove('active');
+        });
+        if (element) {
+            element.classList.add('active');
+        }
+    }
+
+    // Initial load: determine which section to show based on the URL hash or default to 'welcome'
+    document.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.substring(1);
+        let activityToShow = 'welcome';
+        
+        if (hash && document.getElementById(hash)) {
+            activityToShow = hash;
+        }
+
+        const navElement = document.getElementById('nav-' + activityToShow);
+        showActivity(activityToShow, navElement);
+
+        // Optional: Scroll to the top of the content area on navigation change (for mobile view)
+        const contentDiv = document.getElementById('content');
+        if (contentDiv) {
+            contentDiv.scrollTop = 0;
+        }
+    });
+
+    // Ensure the hash changes the displayed content when clicking links
+    document.querySelectorAll('#sidebar a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const activityId = e.target.getAttribute('href').substring(1);
+            window.location.hash = activityId; // Update URL hash
+            showActivity(activityId, e.target);
+            
+            // Scroll to the top of the content area
+            const contentDiv = document.getElementById('content');
+            if (contentDiv) {
+                contentDiv.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
