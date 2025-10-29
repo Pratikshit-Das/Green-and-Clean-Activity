@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FT-IV Renewable Energy Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MATHJAX CONFIGURATION: Added to render LaTeX syntax (like $\rightarrow$ and $\text{CH}_4$) -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        // Configure MathJax to process content within the .block-diagram and .explanation elements
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            startup: {
+                ready: function () {
+                    MathJax.startup.defaultReady();
+                    // Process content when the page loads (important for dynamically loaded content)
+                    MathJax.typesetPromise(); 
+                }
+            }
+        };
+    </script>
+    
     <style>
         /* General Styles and Reset */
         body {
@@ -104,6 +124,11 @@
             line-height: 1.6;
             text-align: justify;
         }
+        
+        /* Ensure <strong> is visually bold */
+        .explanation p strong {
+            font-weight: 700;
+        }
 
         /* Block Diagram Styling */
         .block-diagram {
@@ -173,18 +198,19 @@
 
     <div id="content">
 
-        <!-- 1. WELCOME SECTION -->
+        <!-- 1. WELCOME SECTION (Updated title as requested) -->
         <section id="welcome" class="activity-section active">
-            <h1>Academic Portfolio Submission</h1>
-            <h3>Design and Application of Renewable Energy Systems</h3>
-            <p class="explanation">Welcome to the portfolio submission for FT-IV. This project addresses three design and application-oriented activities focused on non-solar renewable energy sources, as required by the submission guidelines. All sections contain the required **Block Diagram/Architecture** and an **Explanation** of 150–200 words.</p>
+            <h1>Welcome of Green and Clean Energy Portfolio of Pratikshit Das (RA2311047010112)</h1>
+            <h3>Design and Application of Non-Solar Energy Systems</h3>
+            <p class="explanation">Welcome to the FT-IV Renewable Energy Portfolio. This document presents the design and application architecture for three non-solar renewable energy activities.</p>
             <hr style="margin: 30px 0;">
-            <p><strong>Evaluation Reminders:</strong></p>
+            <h4>Portfolio Overview:</h4>
             <ul>
-                <li><strong>Website Design & Navigation:</strong> Implemented via the left navigation panel.</li>
-                <li><strong>Content:</strong> All three required activities are completed.</li>
-                <li><strong>Submission:</strong> The final published URL must be shared by the deadline.</li>
+                <li>Wave Energy Conversion System (WEC)</li>
+                <li>Biogas Generation System (Biomass)</li>
+                <li>Ocean Thermal Energy Conversion (OTEC) System</li>
             </ul>
+            <p class="explanation" style="margin-top: 20px;">Each section includes the complete <strong>Block Diagram</strong> and a detailed <strong>Explanation</strong> of the energy source, conversion process, and real-world relevance.</p>
         </section>
 
         <!-- 2. ACTIVITY 1 (WAVE) -->
@@ -206,8 +232,8 @@
 
             <h4>Explanation (195 Words)</h4>
             <div class="explanation">
-                <p>This activity proposes integrating a **Wave Energy Conversion (WEC)** system with a **Reverse Osmosis (RO)** desalination plant. The **source of energy** is the kinetic and potential energy inherent in ocean waves. The most common **conversion process** for this integration is often an **Oscillating Water Column (OWC)** device, where incoming waves compress air within a chamber. This pressurized air drives a **Wells Turbine** (or similar), converting the wave's kinetic energy into **mechanical energy**, which a generator then transforms into **electrical power**.</p>
-                <p>The **output/utilization** of this system is two-fold: **electricity** and **potable freshwater**. The generated electricity powers the high-pressure pumps essential for the RO desalination process, which forces seawater through semi-permeable membranes to remove salt. This system's **real-world application relevance** is significant for coastal regions facing water scarcity. By using a non-intermittent, non-polluting wave resource to power an energy-intensive desalination process, it provides a completely self-sufficient, sustainable solution for clean water access, reducing reliance on the main electrical grid and fossil fuels.</p>
+                <p>This activity proposes integrating a <strong>Wave Energy Conversion (WEC)</strong> system with a <strong>Reverse Osmosis (RO)</strong> desalination plant. The <strong>source of energy</strong> is the kinetic and potential energy inherent in ocean waves. The most common <strong>conversion process</strong> for this integration is often an <strong>Oscillating Water Column (OWC)</strong> device, where incoming waves compress air within a chamber. This pressurized air drives a <strong>Wells Turbine</strong> (or similar), converting the wave's kinetic energy into <strong>mechanical energy</strong>, which a <strong>generator</strong> then transforms into <strong>electrical power</strong>.</p>
+                <p>The <strong>output/utilization</strong> of this system is two-fold: <strong>electricity</strong> and <strong>potable freshwater</strong>. The generated electricity powers the high-pressure pumps essential for the RO desalination process, which forces seawater through semi-permeable membranes to remove salt. This system's <strong>real-world application relevance</strong> is significant for coastal regions facing water scarcity. By using a non-intermittent, non-polluting wave resource to power an energy-intensive desalination process, it provides a completely self-sufficient, sustainable solution for clean water access, reducing reliance on the main electrical grid and fossil fuels.</p>
             </div>
         </section>
 
@@ -231,8 +257,8 @@
 
             <h4>Explanation (190 Words)</h4>
             <div class="explanation">
-                <p>The objective is to design a sustainable biogas generation system for a dairy farm. The primary **source of energy** is the **biomass** in the form of **cattle manure** and wastewater slurry from the 100 cattle. The **conversion process** is **Anaerobic Digestion (AD)**, which occurs in a large, airtight digester tank. Microorganisms break down the organic material in the absence of oxygen, resulting in the production of **biogas** (primarily methane ($\text{CH}_4$) and carbon dioxide ($\text{CO}_2$)) and a nutrient-rich residue called **digestate**.</p>
-                <p>The main **output/utilization** of the system is the **biogas**, which is stored and typically used on the farm for thermal applications like cooking, heating water for cleaning, or fueling a generator for electricity. The secondary, but equally valuable, output is the **digestate**, a superior, odor-free **organic fertilizer** that can replace chemical fertilizers on the farm’s fodder fields. The **real-world application relevance** for dairy farms is transformative. It simultaneously manages massive volumes of farm waste hygienically, reduces greenhouse gas emissions (by capturing methane), provides a renewable energy source, and creates a valuable fertilizer byproduct, significantly boosting the farm's environmental and economic sustainability.</p>
+                <p>The objective is to design a sustainable biogas generation system for a dairy farm. The primary <strong>source of energy</strong> is the <strong>biomass</strong> in the form of <strong>cattle manure</strong> and wastewater slurry from the 100 cattle. The <strong>conversion process</strong> is <strong>Anaerobic Digestion (AD)</strong>, which occurs in a large, airtight digester tank. Microorganisms break down the organic material in the absence of oxygen, resulting in the production of <strong>biogas</strong> (primarily methane ($\text{CH}_4$) and carbon dioxide ($\text{CO}_2$)) and a nutrient-rich residue called <strong>digestate</strong>.</p>
+                <p>The main <strong>output/utilization</strong> of the system is the <strong>biogas</strong>, which is stored and typically used on the farm for thermal applications like cooking, heating water for cleaning, or fueling a generator for electricity. The secondary, but equally valuable, output is the <strong>digestate</strong>, a superior, odor-free <strong>organic fertilizer</strong> that can replace chemical fertilizers on the farm’s fodder fields. The <strong>real-world application relevance</strong> for dairy farms is transformative. It simultaneously manages massive volumes of farm waste hygienically, reduces greenhouse gas emissions (by capturing methane), provides a renewable energy source, and creates a valuable fertilizer byproduct, significantly boosting the farm's environmental and economic sustainability.</p>
             </div>
         </section>
 
@@ -256,8 +282,8 @@
 
             <h4>Explanation (199 Words)</h4>
             <div class="explanation">
-                <p>This activity details a **Closed-Cycle Ocean Thermal Energy Conversion (OTEC)** system, which utilizes the temperature difference between warm surface seawater and cold deep seawater. The **source of energy** is the enormous stored thermal energy in the ocean, a result of solar heating. The most common and efficient **conversion process** is the **Closed-Cycle OTEC**, which uses a low-boiling-point working fluid, such as ammonia. Warm surface water heats this fluid in an **evaporator** to create high-pressure vapor. This vapor drives a **turbine** connected to a **generator** to produce electricity. The vapor is then cooled back into a liquid in a **condenser** using cold water pumped from the ocean depths, completing the closed cycle.</p>
-                <p>The primary **output/utilization** is continuous, reliable **baseload electricity generation**. A secondary benefit, often integrated with **Open-Cycle OTEC**, is the production of **freshwater** from the condensed steam, which is a key value proposition. OTEC’s **real-world application relevance** lies in its potential to provide a non-intermittent, clean energy source for tropical island nations and coastal developing regions. As the temperature gradient is consistently available $24/7$, OTEC avoids the intermittency issues of solar and wind, offering a stable power supply and potentially alleviating clean water shortages simultaneously.</p>
+                <p>This activity details a <strong>Closed-Cycle Ocean Thermal Energy Conversion (OTEC)</strong> system, which utilizes the temperature difference between warm surface seawater and cold deep seawater. The <strong>source of energy</strong> is the enormous stored thermal energy in the ocean, a result of solar heating. The most common and efficient <strong>conversion process</strong> is the <strong>Closed-Cycle OTEC</strong>, which uses a low-boiling-point working fluid, such as ammonia. Warm surface water heats this fluid in an <strong>evaporator</strong> to create high-pressure vapor. This vapor drives a <strong>turbine</strong> connected to a <strong>generator</strong> to produce electricity. The vapor is then cooled back into a liquid in a <strong>condenser</strong> using cold water pumped from the ocean depths, completing the closed cycle.</p>
+                <p>The primary <strong>output/utilization</strong> is continuous, reliable <strong>baseload electricity generation</strong>. A secondary benefit, often integrated with <strong>Open-Cycle OTEC</strong>, is the production of <strong>freshwater</strong> from the condensed steam, which is a key value proposition. OTEC’s <strong>real-world application relevance</strong> lies in its potential to provide a non-intermittent, clean energy source for tropical island nations and coastal developing regions. As the temperature gradient is consistently available $24/7$, OTEC avoids the intermittency issues of solar and wind, offering a stable power supply and potentially alleviating clean water shortages simultaneously.</p>
             </div>
         </section>
 
@@ -276,6 +302,12 @@
         const targetSection = document.getElementById(activityId);
         if (targetSection) {
             targetSection.classList.add('active');
+            
+            // Trigger MathJax typesetting for the new content
+            // FIX: Check if MathJax and the typesetPromise function are fully loaded before calling it.
+            if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+                MathJax.typesetPromise([targetSection]).catch((err) => console.log('MathJax Typeset Error:', err));
+            }
         }
 
         // Update active class on sidebar links
